@@ -58,35 +58,43 @@ body {
 
 
 
-button {
-  --glow-color:  rgb(146, 163, 140);
+.botun {
+  background: linear-gradient(90deg, #8fa98b 0%, #a3c9a8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1em;
+  padding: 8px 26px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-left: 18px;
+  box-shadow: 0 2px 8px rgba(60, 80, 60, 0.10), inset 0 1.5px 6px #7e9277;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s, filter 0.2s;
+  outline: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.botun::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1em;
+  box-shadow: 0 0 0 0 #b7d7b0;
+  transition: box-shadow 0.3s, filter 0.3s;
+  pointer-events: none;
+}
+.botun:hover, .botun:focus {
+  background: linear-gradient(90deg, #7e9277 0%, #8fa98b 100%);
+  box-shadow: 0 4px 16px rgba(60, 80, 60, 0.16), 0 0 12px 2px #a3c9a8;
+  filter: brightness(1.08) saturate(1.1);
+  transform: translateY(-2px) scale(1.07);
+}
+.botun:hover::before, .botun:focus::before {
+  box-shadow: 0 0 16px 4px #a3c9a8;
+  filter: blur(1.5px);
+}
 
-    border: 0.25em solid var(--glow-color);
-
-    padding: 5px 20px;
-
-    color: var(--glow-color);
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    border-radius: 1em;
-
-    outline: none;
-
-    box-shadow: 0 0 1em 0.25em var(--glow-color),
-
-      inset 0 0 0.74em 0.25em var(--glow-color);
-
-    text-shadow: 0 0 0.5em var(--glow-color);
-
-    transition: all 0.3s;
-
-    right: 0;
-  }
 a {
   text-decoration: none;
 }
